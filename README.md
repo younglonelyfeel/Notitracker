@@ -38,7 +38,7 @@ If you are deploying the pre-compiled binary:
 
 ```bash
 # Clone the repository
-git clone [https://github.com/younglonelyfeel/Notitracker.git](https://github.com/younglonelyfeel/Notitracker.git)
+git clone https://github.com/younglonelyfeel/Notitracker.git
 cd Notitracker
 
 # Install dependencies
@@ -47,16 +47,3 @@ pip install -r requirements.txt
 # Configure environment
 # Ensure config.py is set up with valid credentials
 python main.py
-⚙️ ConfigurationThe system uses a centralized configuration file (config.py) for security practices.Security Note: Do not commit your config.py with real tokens to GitHub.Python# config.py example structure
-TELEGRAM_BOT_TOKEN = "YOUR_TOKEN_HERE"
-TELEGRAM_CHAT_ID = "YOUR_CHAT_ID"
-FETCH_SEMAPHORE_COUNT = 5  # Max concurrent requests
-HIBERNATION_WINDOW = (22, 8) # Sleep between 22h and 8h
-🤖 CommandsInteract with the bot via Telegram using the following commands:CommandDescription/add <ID> <Name>Add a new channel to the tracking list./del <ID>Remove a channel and clear its persistent data./mute <ID>Pause tracking for a specific channel (Hibernation override)./unmute <ID>Resume tracking for a specific channel./listShow all tracked channels with status indicators./statusDisplay system health (RAM usage, Uptime, Threads)./stopManually stop the scanning loop./resumeResume the scanning loop.📂 Project StructureNotiTracker/
-├── data/               # JSON persistence storage (Auto-generated)
-├── logs/               # Runtime logs (Auto-generated)
-├── config.py           # Configuration & Secrets
-├── main.py             # Application Entry point
-├── requirements.txt    # Project Dependencies
-└── README.md           # Documentation
-📜 LicenseDistributed under the MIT License. See LICENSE for more information.Maintained by @younglonelyfeel
